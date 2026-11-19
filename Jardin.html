@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín de Santa Inés | Centro Histórico de Puebla</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        santaines: {
+                            primary: '#6B1D1D',
+                            secondary: '#8C5830',
+                            dark: '#2A1A17',
+                            light: '#FDFBF7',
+                            accent: '#D4AF37',
+                            parchment: '#F5E7C6'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #2A1A17;
+            background-image: radial-gradient(#8C5830 0.75px, transparent 0.75px), radial-gradient(#6B1D1D 0.75px, #2A1A17 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+    </style>
+</head>
+<body class="bg-santaines-light text-santaines-dark font-sans antialiased selection:bg-santaines-primary selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-santaines-dark/95 backdrop-blur-md border-b border-santaines-accent/30 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-santaines-primary border border-santaines-accent flex items-center justify-center font-cinzel font-bold text-santaines-accent text-lg shadow-md group-hover:scale-105 transition">
+                    SI
+                </div>
+                <div>
+                    <span class="font-cinzel font-bold text-lg tracking-wider block text-santaines-light">Jardín de Santa Inés</span>
+                    <span class="text-xs text-santaines-accent tracking-widest uppercase block">Centro Histórico de Puebla</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-santaines-accent transition">Inicio</a>
+                <a href="#ubicacion" class="hover:text-santaines-accent transition">Ubicación</a>
+                <a href="#galeria" class="hover:text-santaines-accent transition">Galería</a>
+                <button onclick="openInfografia()" class="bg-santaines-primary hover:bg-santaines-primary/90 text-white font-cinzel font-bold px-5 py-2.5 rounded-full border border-santaines-accent/50 shadow-md transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <svg class="w-4 h-4 text-santaines-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Infografía
+                </button>
+            </nav>
+
+            <button onclick="openInfografia()" class="md:hidden bg-santaines-primary text-white p-2.5 rounded-lg border border-santaines-accent/50 flex items-center gap-1.5 text-xs font-cinzel font-bold shadow">
+                <svg class="w-4 h-4 text-santaines-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Infografía
+            </button>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative min-h-screen hero-pattern flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-25 bg-[url('parque.jpg')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-santaines-dark via-santaines-dark/80 to-transparent"></div>
+        
+        <div class="relative max-w-4xl mx-auto text-center text-white space-y-8 z-10 mt-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-santaines-primary/80 border border-santaines-accent/50 text-santaines-accent text-xs font-cinzel uppercase tracking-widest shadow-lg">
+                <span>Patrimonio Histórico de Puebla</span>
+            </div>
+            
+            <h1 class="font-cinzel text-4xl sm:text-6xl lg:text-7xl font-bold tracking-wide leading-tight drop-shadow-lg">
+                Jardín de Santa Inés
+            </h1>
+            
+            <p class="font-playfair italic text-lg sm:text-2xl text-santaines-light/90 max-w-2xl mx-auto leading-relaxed">
+                "Un rincón virreinal en el corazón de Puebla, donde el arte barroco, la cantera y la tradición musical se funden en el tiempo."
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <button onclick="openInfografia()" class="bg-gradient-to-r from-santaines-accent to-amber-600 hover:from-amber-500 hover:to-amber-700 text-santaines-dark font-cinzel font-bold px-8 py-4 rounded-full shadow-xl transition transform hover:scale-105 flex items-center gap-3 text-base">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    Ver Infografía Oficial
+                </button>
+                <a href="#ubicacion" class="bg-white/10 hover:bg-white/20 text-white font-cinzel px-8 py-4 rounded-full border border-white/20 backdrop-blur transition flex items-center gap-2 text-base">
+                    Ver Ubicación
+                </a>
+                <a href="#galeria" class="bg-white/10 hover:bg-white/20 text-white font-cinzel px-8 py-4 rounded-full border border-white/20 backdrop-blur transition flex items-center gap-2 text-base">
+                    Galería
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 class="text-santaines-primary font-cinzel uppercase text-sm tracking-widest font-bold">Cómo llegar</h2>
+            <h3 class="font-cinzel text-3xl sm:text-4xl font-bold text-santaines-dark">Ubicación en el Centro Histórico</h3>
+            <div class="w-24 h-1 bg-santaines-accent mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center bg-white p-8 rounded-3xl shadow-xl border border-santaines-primary/20">
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-santaines-primary text-santaines-accent rounded-2xl flex items-center justify-center shrink-0 font-cinzel font-bold text-xl shadow">
+                        📍
+                    </div>
+                    <div>
+                        <h4 class="font-cinzel font-bold text-santaines-primary text-lg">Dirección exacta</h4>
+                        <p class="text-santaines-dark/80 text-base mt-1">3 Sur y 9 Poniente (303-305), Centro Histórico, Puebla, Pue.</p>
+                    </div>
+                </div>
+                <p class="text-santaines-dark/70 text-sm leading-relaxed">
+                    Situado a unas cuadras del zócalo de la ciudad, rodeado de casonas coloniales y del imponente patrimonio barroco poblano.
+                </p>
+                <div class="pt-2">
+                    <a href="https://maps.google.com/?q=Jardin+de+Santa+Ines+Puebla" target="_blank" class="inline-flex items-center gap-2 bg-santaines-dark hover:bg-santaines-primary text-white font-cinzel text-sm px-6 py-3 rounded-full transition shadow">
+                        Abrir en Google Maps ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-santaines-accent/40 h-72">
+                <img src="parque.jpg" alt="Parque de Santa Inés" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 bg-santaines-dark text-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-santaines-accent font-cinzel uppercase text-sm tracking-widest font-bold">Patrimonio Artístico</h2>
+                <h3 class="font-cinzel text-3xl sm:text-4xl font-bold text-santaines-light">Galería del Jardín</h3>
+                <div class="w-24 h-1 bg-santaines-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-santaines-dark/80 border border-santaines-accent/30 rounded-2xl overflow-hidden shadow-xl group hover:border-santaines-accent transition">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="parque.jpg" alt="Jardín de Santa Inés" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-santaines-primary text-white text-xs font-cinzel px-3 py-1 rounded-full border border-santaines-accent/50">Área Verde</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-cinzel text-xl font-bold text-santaines-accent">Entorno del Parque</h4>
+                        <p class="text-sm text-santaines-light/80">Espacio de convivencia familiar y descanso en el corazón de Puebla.</p>
+                    </div>
+                </div>
+
+                <div class="bg-santaines-dark/80 border border-santaines-accent/30 rounded-2xl overflow-hidden shadow-xl group hover:border-santaines-accent transition">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="infografia.jpg" alt="Infografía Oficial" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-santaines-primary text-white text-xs font-cinzel px-3 py-1 rounded-full border border-santaines-accent/50">Documento</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-cinzel text-xl font-bold text-santaines-accent">Infografía del Sitio</h4>
+                        <p class="text-sm text-santaines-light/80">Investigación histórica, cronología y créditos oficiales.</p>
+                    </div>
+                </div>
+
+                <div class="bg-santaines-dark/80 border border-santaines-accent/30 rounded-2xl overflow-hidden shadow-xl group hover:border-santaines-accent transition sm:col-span-2 lg:col-span-1">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://almanaquerevista.com/wp-content/uploads/2022/04/parque-de-santa-ines-puebla-1.jpg" alt="Centro Histórico" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-santaines-primary text-white text-xs font-cinzel px-3 py-1 rounded-full border border-santaines-accent/50">Arquitectura</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-cinzel text-xl font-bold text-santaines-accent">Arquitectura Virreinal</h4>
+                        <p class="text-sm text-santaines-light/80">Fachadas históricas y elementos tradicionales poblanos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-santaines-dark border-t border-santaines-accent/20 py-12 px-4 text-white text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <h3 class="font-cinzel text-2xl font-bold text-santaines-accent">Jardín de Santa Inés</h3>
+            <p class="text-sm text-santaines-light/70">Centro Histórico de Puebla • Espacio de cultura, historia y tradición.</p>
+            <div class="pt-4 flex justify-center gap-4">
+                <button onclick="openInfografia()" class="bg-santaines-primary hover:bg-santaines-primary/90 text-white font-cinzel font-bold px-6 py-3 rounded-full border border-santaines-accent/50 shadow transition flex items-center gap-2">
+                    <svg class="w-4 h-4 text-santaines-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Abrir Infografía
+                </button>
+            </div>
+            <p class="text-xs text-santaines-light/40 pt-8 border-t border-white/10">© 2026 Jardín de Santa Inés. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="infografiaModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden p-2 sm:p-4 overflow-y-auto">
+        <div class="relative w-full max-w-4xl bg-santaines-parchment rounded-3xl shadow-2xl border-4 border-santaines-primary overflow-hidden my-8">
+            <div class="bg-santaines-primary text-white px-6 py-4 flex items-center justify-between border-b-2 border-santaines-accent">
+                <div class="flex items-center gap-3">
+                    <span class="font-cinzel font-bold text-lg text-santaines-accent">Infografía Oficial</span>
+                    <span class="text-xs bg-black/30 px-3 py-1 rounded-full text-santaines-light">Jardín de Santa Inés</span>
+                </div>
+                <button onclick="closeInfografia()" class="bg-white/20 hover:bg-white/30 text-white font-bold p-2 rounded-lg transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 sm:p-6 text-center max-h-[82vh] overflow-y-auto bg-[#2A1A17]">
+                <img src="infografia.jpg" alt="Infografía Oficial Jardín de Santa Inés" class="max-w-full max-h-[75vh] mx-auto rounded-xl shadow-2xl border-4 border-santaines-accent object-contain">
+                <p class="text-xs font-cinzel text-santaines-accent mt-4">Toca la "X" arriba para regresar a la página principal</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openInfografia() {
+            document.getElementById('infografiaModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeInfografia() {
+            document.getElementById('infografiaModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
